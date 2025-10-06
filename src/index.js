@@ -44,8 +44,9 @@ client.on('ready', async () => {
         const randomIndex = Math.floor(Math.random() * randomMessages.length);
         const selectedMessage = randomMessages[randomIndex];
         channel.send(selectedMessage);
-    }, 51156147);
+    }, 50156147);
 });
 
 
 client.login(process.env.BOT_TOKEN)
+
