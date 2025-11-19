@@ -18,13 +18,14 @@ client.once('ready', () => {
 });
 
 
-client.on('messageCreate', (message) => {
+client.on('messageCreate', message => {
     if (message.author.bot) return;
-    if (message.content === 'MUD' || message.content === 'mud' || message.content === 'Mud'|| message.content === 'MUD!'|| message.content === 'mud!'|| message.content === 'Mud!'|| message.content === '<:mudball:1423251589350559786>') {
+    const messageContent = message.content.toLowerCase();
+    if (messageContent.includes('mud') || messageContent.includes('<:mudball:1423251589350559786>')) {
         message.reply('MUD');
         message.react('<:mudball:1423251589350559786>');
     }
-})
+});
 
 
 const messagesFilePath = './text.txt';
@@ -49,4 +50,5 @@ client.on('ready', async () => {
 
 
 client.login(process.env.BOT_TOKEN)
+
 
